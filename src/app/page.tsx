@@ -29,22 +29,19 @@ export default function Home() {
       name: "Crypto Investment Fund",
       description:
         "Member-led research group focused on thesis building, debate, and transparent portfolio management.",
-      stack: "Research, Pitching, Governance",
-      links: ["Research Notes", "Fund Memo"],
+      image: "/carousel/mbc.jpg",
     },
     {
       name: "Education Track",
       description:
         "Guided learning from blockchain fundamentals to smart contracts and DApp engineering.",
-      stack: "Solidity, EVM, DApps",
-      links: ["Syllabus", "Workshops"],
+      image: "/carousel/unlock the block.png",
     },
     {
       name: "Research Studio",
       description:
         "Collaborative research on cryptography, security, and decentralized systems.",
-      stack: "Cryptography, Security, Systems",
-      links: ["Papers", "Talks"],
+      image: "/carousel/mbc group.jpg",
     },
   ];
 
@@ -86,16 +83,31 @@ export default function Home() {
       name: "Dilan Taneja",
       role: "Co-President",
       focus: "Leadership",
+      image: "/leadership/Dilan.jpg",
     },
     {
       name: "Vitthal Agarwal",
       role: "Co-President",
       focus: "Leadership",
+      image: "/leadership/Vitthal.jpg",
     },
     {
       name: "Arjun Kartik Iyer",
       role: "Vice President",
       focus: "Operations",
+      image: "/leadership/Arjun.PNG",
+    },
+    {
+      name: "Samuel Cook",
+      role: "Treasurer",
+      focus: "Finance",
+      image: "/leadership/Samuel Cook.png",
+    },
+    {
+      name: "Sueun Cho",
+      role: "Head of Research",
+      focus: "Research",
+      image: "/leadership/Sueun Cho.png",
     },
   ];
 
@@ -120,6 +132,16 @@ export default function Home() {
       image: "/carousel/unlock the block.png",
       alt: "Unlock the block event",
     },
+  ];
+
+  const ecosystemLogos = [
+    { name: "Stand With Crypto", file: "/partners/stand with crypto.png" },
+    { name: "Polymarket", file: "/partners/polymarket.png" },
+    { name: "Ledger", file: "/partners/ledger.png" },
+    { name: "Internet Computer", file: "/partners/ICP.png" },
+    { name: "Ethereum", file: "/partners/ethereum.png" },
+    { name: "Bitcoin", file: "/partners/bitcoin.png" },
+    { name: "College.xyz", file: "/partners/college xyz.png" },
   ];
 
   return (
@@ -300,27 +322,23 @@ export default function Home() {
             {projects.map((project) => (
               <div
                 key={project.name}
-                className="hover-ember rounded-2xl border border-white/10 bg-[#111111] p-6"
+                className="hover-ember relative overflow-hidden rounded-2xl border border-white/10 bg-[#111111] p-6"
               >
+                <Image
+                  src={project.image}
+                  alt={`${project.name} background`}
+                  width={800}
+                  height={600}
+                  className="absolute inset-0 h-full w-full object-cover opacity-20"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-[#0e0e0e]/60" />
+                <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-stone-100">
                   {project.name}
                 </h3>
                 <p className="mt-3 text-sm text-stone-400">
                   {project.description}
                 </p>
-                <p className="mt-4 text-xs uppercase tracking-[0.3em] text-stone-500">
-                  Tech Stack
-                </p>
-                <p className="mt-2 text-sm text-stone-300">{project.stack}</p>
-                <div className="mt-5 flex gap-3 text-xs text-amber-200">
-                  {project.links.map((link) => (
-                    <span
-                      key={link}
-                      className="rounded-full border border-amber-300/20 px-3 py-1"
-                    >
-                      {link}
-                    </span>
-                  ))}
                 </div>
               </div>
             ))}
@@ -411,17 +429,20 @@ export default function Home() {
             </div>
             <div className="hidden h-[2px] w-40 bg-ember md:block" />
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {team.map((member) => (
               <div
                 key={member.name}
                 className="rounded-2xl border border-white/10 bg-[#111111] p-5 text-center"
               >
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-amber-300/30 bg-[#161616] text-lg font-semibold text-amber-200">
-                  {member.name
-                    .split(" ")
-                    .map((part) => part[0])
-                    .join("")}
+                <div className="mx-auto h-20 w-20 overflow-hidden rounded-full border border-amber-300/30 bg-[#161616]">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={160}
+                    height={160}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-stone-100">
                   {member.name}
@@ -430,14 +451,6 @@ export default function Home() {
                 <p className="mt-3 text-xs uppercase tracking-[0.25em] text-stone-500">
                   {member.focus}
                 </p>
-                <div className="mt-4 flex justify-center gap-3 text-xs text-amber-200">
-                  <span className="rounded-full border border-amber-300/20 px-3 py-1">
-                    GitHub
-                  </span>
-                  <span className="rounded-full border border-amber-300/20 px-3 py-1">
-                    LinkedIn
-                  </span>
-                </div>
               </div>
             ))}
           </div>
@@ -460,23 +473,28 @@ export default function Home() {
             through conferences, educational programming, and community
             collaborations.
           </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm text-stone-300">
-            {[
-              "Stand With Crypto",
-              "Polymarket",
-              "Ledger",
-              "Internet Computer",
-              "Ethereum ecosystem",
-              "Bitcoin ecosystem",
-              "College.xyz",
-            ].map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/10 bg-[#111111] px-4 py-2"
-              >
-                {item}
-              </span>
-            ))}
+          <div className="logo-marquee mt-8">
+            <div className="logo-track">
+              {[...ecosystemLogos, ...ecosystemLogos].map((logo, index) => (
+                <div key={`${logo.name}-${index}`} className="logo-item">
+                  <div
+                    className={`logo-frame ${
+                      logo.name === "College.xyz"
+                        ? "logo-frame-light logo-frame-rect"
+                        : ""
+                    }`}
+                  >
+                    <Image
+                      src={logo.file}
+                      alt={`${logo.name} logo`}
+                      width={140}
+                      height={48}
+                      className="logo-image"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
