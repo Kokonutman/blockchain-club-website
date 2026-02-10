@@ -47,9 +47,21 @@ export default function Home() {
 
   const events = [
     {
+      title: "Interest Meeting",
+      type: "Community",
+      date: "Feb 10, 2026 · 6:00 PM · Van Munching Hall",
+      status: "upcoming",
+    },
+    {
       title: "ETHDenver 2026",
       type: "Conference",
-      date: "Feb 2026",
+      date: "Feb 17-21, 2026",
+      status: "upcoming",
+    },
+    {
+      title: "Penn Blockchain Conference 2026",
+      type: "Conference",
+      date: "Mar 27-28, 2026",
       status: "upcoming",
     },
     {
@@ -57,24 +69,6 @@ export default function Home() {
       type: "Conference",
       date: "May 5-7, 2026",
       status: "upcoming",
-    },
-    {
-      title: "Penn Blockchain Conference 2026",
-      type: "Conference",
-      date: "Fall 2026",
-      status: "upcoming",
-    },
-    {
-      title: "On-Campus Educational Meetings",
-      type: "Community",
-      date: "Ongoing",
-      status: "past",
-    },
-    {
-      title: "Workshops & Community Meetups",
-      type: "Workshop",
-      date: "2025",
-      status: "past",
     },
   ];
 
@@ -516,15 +510,46 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <button className="rounded-full bg-ember px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110">
-                  Interest Form
-                </button>
-                <button className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/40">
+                <a
+                  className="rounded-full bg-ember px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110"
+                  href="https://groupme.com/join_group/110034791/X3k7lCew"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Join GroupMe
+                </a>
+                <a
+                  className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/40"
+                  href="https://discord.gg/X45xXcRsZb"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Discord
-                </button>
-                <button className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/40">
-                  Mailing List
-                </button>
+                </a>
+                <a
+                  className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/40"
+                  href="https://t.me/+12IQLv7cw4s1ZWFh"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Telegram
+                </a>
+                <a
+                  className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/40"
+                  href="https://www.instagram.com/blockchain.umd"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram
+                </a>
+                <a
+                  className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-stone-100 transition hover:border-white/40"
+                  href="https://x.com/blockchainatumd?s=11"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  X
+                </a>
               </div>
             </div>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -548,7 +573,40 @@ export default function Home() {
       <footer className="border-t border-white/5 py-8">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 px-6 text-xs text-stone-500 md:flex-row">
           <p>Blockchain at Maryland. Engineering-focused Web3 organization.</p>
-          <p>College Park, Maryland</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              className="hover:text-stone-300"
+              href="https://www.instagram.com/blockchain.umd"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              className="hover:text-stone-300"
+              href="https://x.com/blockchainatumd?s=11"
+              target="_blank"
+              rel="noreferrer"
+            >
+              X
+            </a>
+            <a
+              className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-stone-500 hover:text-stone-300"
+              href="https://www.linkedin.com/in/robert-hopkins-a5860224b/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                src="/melvin.jpg"
+                alt="Secret Melvin"
+                width={24}
+                height={24}
+                className="h-4 w-4 rounded-sm object-cover opacity-80"
+              />
+              <span>Secret Melvin</span>
+            </a>
+            <span>College Park, Maryland</span>
+          </div>
         </div>
       </footer>
     </div>
