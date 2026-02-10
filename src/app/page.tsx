@@ -83,24 +83,19 @@ export default function Home() {
 
   const team = [
     {
-      name: "Ava Collins",
-      role: "President",
-      focus: "Protocol Engineering",
+      name: "Dilan Taneja",
+      role: "Co-President",
+      focus: "Leadership",
     },
     {
-      name: "Jordan Lee",
-      role: "Research Lead",
-      focus: "Cryptography",
+      name: "Vitthal Agarwal",
+      role: "Co-President",
+      focus: "Leadership",
     },
     {
-      name: "Mateo Singh",
-      role: "Engineering Lead",
-      focus: "Smart Contracts",
-    },
-    {
-      name: "Riley Park",
-      role: "Industry & Events",
-      focus: "Partnerships",
+      name: "Arjun Kartik Iyer",
+      role: "Vice President",
+      focus: "Operations",
     },
   ];
 
