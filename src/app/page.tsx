@@ -74,34 +74,34 @@ export default function Home() {
 
   const team = [
     {
-      name: "Dilan Taneja",
-      role: "Co-President",
-      focus: "Leadership",
-      image: "/leadership/Dilan.jpg",
-    },
-    {
       name: "Vitthal Agarwal",
       role: "Co-President",
-      focus: "Leadership",
+      subtitle: "CS + Math + Comp Finance @ UMD '28",
       image: "/leadership/Vitthal.jpg",
     },
     {
-      name: "Arjun Kartik Iyer",
-      role: "Vice President",
-      focus: "Operations",
-      image: "/leadership/Arjun.PNG",
+      name: "Dilan Taneja",
+      role: "Co-President",
+      subtitle: "Finance + IS + OMBA @ UMD '28",
+      image: "/leadership/Dilan.jpg",
     },
     {
-      name: "Samuel Cook",
-      role: "Treasurer",
-      focus: "Finance",
-      image: "/leadership/Samuel Cook.png",
+      name: "Arjun Iyer",
+      role: "Vice President",
+      subtitle: "CS Quantum + Math @ UMD '27",
+      image: "/leadership/Arjun.PNG",
     },
     {
       name: "Sueun Cho",
       role: "Head of Research",
-      focus: "Research",
-      image: "/leadership/Sueun Cho.png",
+      subtitle: "Computer Science @ UMD '26",
+      image: "/leadership/Sueun Cho.jpg",
+    },
+    {
+      name: "Sam Cook",
+      role: "Tech Lead/Project Manager",
+      subtitle: "CS + General Business @ UMD '28",
+      image: "/leadership/Samuel Cook.png",
     },
   ];
 
@@ -418,8 +418,11 @@ export default function Home() {
                 Team
               </p>
               <h2 className="mt-3 text-3xl font-semibold text-stone-100">
-                Leadership & Technical Steering
+                Meet Our Core Team
               </h2>
+              <p className="mt-3 text-sm text-stone-400">
+                Builders, researchers, and degens who are driving Web3 at UMD.
+              </p>
             </div>
             <div className="hidden h-[2px] w-40 bg-ember md:block" />
           </div>
@@ -427,23 +430,23 @@ export default function Home() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="rounded-2xl border border-white/10 bg-[#111111] p-5 text-center"
+                className="rounded-2xl border border-white/10 bg-[#111111] p-5 text-left"
               >
-                <div className="mx-auto h-20 w-20 overflow-hidden rounded-full border border-amber-300/30 bg-[#161616]">
+                <div className="h-32 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#161616]">
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={160}
-                    height={160}
+                    width={420}
+                    height={320}
                     className="h-full w-full object-cover"
                   />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-stone-100">
                   {member.name}
                 </h3>
-                <p className="text-sm text-stone-400">{member.role}</p>
-                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-stone-500">
-                  {member.focus}
+                <p className="text-sm text-stone-300">{member.role}</p>
+                <p className="mt-2 text-xs text-stone-500">
+                  {member.subtitle}
                 </p>
               </div>
             ))}
